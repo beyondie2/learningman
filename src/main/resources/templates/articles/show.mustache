@@ -1,0 +1,27 @@
+{{>layouts/header}}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>단어(한국어)</th>
+        <th>단어(영어)</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#article}}
+    <tr>
+        <th>{{id}}</th>
+        <td>{{title}}</td>
+        <td>{{content}}</td>
+    </tr>
+    {{/article}}
+    </tbody>
+</table>
+
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">수정하기</a>
+<a href="/articles/{{article.id}}/delete" class="btn btn-danger">삭제하기</a>
+<a href="/articles">단어 목록</a>
+
+{{>comments/_comments}}<!-- 상세 페이지의 댓글 뷰 파일 삽입 -->
+{{>layouts/footer}}
